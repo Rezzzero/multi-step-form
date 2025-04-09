@@ -2,7 +2,7 @@ export const PersonalInfoForm = () => {
   return (
     <>
       <div className="flex flex-col gap-4 bg-white w-[90%] rounded-md py-7 px-5 shadow-md mb-auto">
-        <h1 className="font-bold text-2xl">Personal Info</h1>
+        <h1 className="font-bold text-2xl text-[#06195c]">Personal Info</h1>
         <p className="text-gray-400 max-w-[250px]">
           Please provide your name, email address, and phone number.
         </p>

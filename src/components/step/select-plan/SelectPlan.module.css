@@ -1,7 +1,7 @@
 .toggleBtn {
   background-color: #06195c;
   border-radius: 99px;
-  width: 40px;
+  width: 36px;
   height: 20px;
   transition: background-color 0.1s ease;
   cursor: pointer;
@@ -24,5 +24,5 @@
 }
 
 .toggleBtn.toggled .thumb {
-  left: calc(40px - 20px);
+  left: calc(36px - 20px);
 }

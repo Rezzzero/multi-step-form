@@ -18,10 +18,18 @@ const icons = {
   [key: string]: string;
 };
 
-const cost = {
+const costMonthly = {
   arcade: 9,
   advanced: 12,
   pro: 15,
+} as {
+  [key: string]: number;
+};
+
+const costEarly = {
+  arcade: 90,
+  advanced: 120,
+  pro: 150,
 } as {
   [key: string]: number;
 };
@@ -39,17 +47,18 @@ export const PlanCard = ({
 }) => {
   return (
     <div
-      className={`flex gap-5 border-1 ${
+      className={`flex gap-5 border-1 items-start cursor-pointer ${
         selected === plan ? "border-[#06195c]" : "border-gray-300"
-      } rounded-xl p-4`}
+      } rounded-xl px-4 py-3`}
       onClick={() => handleSelect(plan)}
     >
       <img src={icons[plan]} alt="icon" />
       <div>
-        <h1 className="font-bold">{name[plan]}</h1>
+        <h1 className="font-bold text-[#06195c]">{name[plan]}</h1>
         <p className="text-gray-400 text-sm">
-          {isMonthly ? `$${cost[plan]}/mo` : `$${cost[plan]}/yr`}
+          {isMonthly ? `$${costMonthly[plan]}/mo` : `$${costEarly[plan]}/yr`}
         </p>
+        {!isMonthly && <p className="font-semibold text-xs">2 months free</p>}
       </div>
     </div>
   );
