@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+body {
+  background-color: #eef1f8;
+}
+
+@media (max-width: 640px) {
+  body {
+    background-image: url("../src/assets/images/bg-sidebar-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
