@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 body {
-  background-color: #eef1f8;
+  background-color: #edeade;
 }
 
 @media (max-width: 640px) {
