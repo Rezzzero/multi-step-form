@@ -4,7 +4,7 @@ function App() {
   const [currentStep, setCurrentStep] = useState(1);
   const steps = [1, 2, 3, 4];
   return (
-    <div className="container mx-auto flex flex-col h-screen py-8 px-5 items-center">
+    <div className="container mx-auto flex flex-col h-screen pt-8 items-center">
       <div className="flex gap-4 text-white mb-8">
         {steps.map((step) => {
           return (
@@ -19,7 +19,7 @@ function App() {
           );
         })}
       </div>
-      <div className="flex flex-col gap-4 bg-white w-full rounded-md py-7 px-5 shadow-md mb-auto">
+      <div className="flex flex-col gap-4 bg-white w-[90%] rounded-md py-7 px-5 shadow-md mb-auto">
         <h1 className="font-bold text-2xl">Personal Info</h1>
         <p className="text-gray-400 max-w-[250px]">
           Please provide your name, email address, and phone number.
@@ -57,13 +57,30 @@ function App() {
           />
         </form>
       </div>
-      <button
-        type="button"
-        onClick={() => setCurrentStep(currentStep + 1)}
-        className="bg-[#06195c] text-white px-3 py-2 rounded-sm self-end"
+      <div
+        className={`flex bg-white w-full h-[72px] py-4 px-5 ${
+          currentStep > 1 ? "justify-between" : "justify-end"
+        }`}
       >
-        Next Step
-      </button>
+        {currentStep > 1 && (
+          <button
+            type="button"
+            onClick={() => setCurrentStep(currentStep - 1)}
+            className="text-gray-400"
+          >
+            Go Back
+          </button>
+        )}
+        {currentStep < 4 && (
+          <button
+            type="button"
+            onClick={() => setCurrentStep(currentStep + 1)}
+            className="bg-[#06195c] text-white px-3 py-2 rounded-sm self-end"
+          >
+            Next Step
+          </button>
+        )}
+      </div>
     </div>
   );
 }
