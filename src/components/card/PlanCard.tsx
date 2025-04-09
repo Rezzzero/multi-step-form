@@ -29,12 +29,21 @@ const cost = {
 export const PlanCard = ({
   plan,
   isMonthly,
+  selected,
+  handleSelect,
 }: {
   plan: string;
   isMonthly: boolean;
+  selected: string;
+  handleSelect: (plan: string) => void;
 }) => {
   return (
-    <div className="flex gap-5 border-1 border-gray-300 rounded-xl p-4">
+    <div
+      className={`flex gap-5 border-1 ${
+        selected === plan ? "border-[#06195c]" : "border-gray-300"
+      } rounded-xl p-4`}
+      onClick={() => handleSelect(plan)}
+    >
       <img src={icons[plan]} alt="icon" />
       <div>
         <h1 className="font-bold">{name[plan]}</h1>
