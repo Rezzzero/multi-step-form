@@ -2,34 +2,26 @@ import ProIcon from "../../assets/images/icon-pro.svg";
 import ArcadeIcon from "../../assets/images/icon-arcade.svg";
 import AdvancedIcon from "../../assets/images/icon-advanced.svg";
 
-const name = {
-  arcade: "Arcade",
-  advanced: "Advanced",
-  pro: "Pro",
-} as {
-  [key: string]: string;
-};
-
 const icons = {
-  arcade: ArcadeIcon,
-  advanced: AdvancedIcon,
-  pro: ProIcon,
+  Arcade: ArcadeIcon,
+  Advanced: AdvancedIcon,
+  Pro: ProIcon,
 } as {
   [key: string]: string;
 };
 
 const costMonthly = {
-  arcade: 9,
-  advanced: 12,
-  pro: 15,
+  Arcade: 9,
+  Aadvanced: 12,
+  Pro: 15,
 } as {
   [key: string]: number;
 };
 
 const costEarly = {
-  arcade: 90,
-  advanced: 120,
-  pro: 150,
+  Arcade: 90,
+  Advanced: 120,
+  Pro: 150,
 } as {
   [key: string]: number;
 };
@@ -54,7 +46,7 @@ export const PlanCard = ({
     >
       <img src={icons[plan]} alt="icon" />
       <div>
-        <h1 className="font-bold text-[#06195c]">{name[plan]}</h1>
+        <h1 className="font-bold text-[#06195c]">{plan}</h1>
         <p className="text-gray-400 text-sm">
           {isMonthly ? `$${costMonthly[plan]}/mo` : `$${costEarly[plan]}/yr`}
         </p>

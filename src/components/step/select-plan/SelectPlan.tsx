@@ -4,7 +4,7 @@ import styles from "./SelectPlan.module.css";
 
 export const SelectPlan = () => {
   const [toggled, setToggled] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState("arcade");
+  const [selectedPlan, setSelectedPlan] = useState("Arcade");
   return (
     <>
       <div className="flex flex-col gap-2 bg-white w-[90%] rounded-md py-7 px-5 shadow-md mb-auto">
@@ -13,19 +13,19 @@ export const SelectPlan = () => {
           You have the option of monthly or yearly billing.
         </p>
         <PlanCard
-          plan="arcade"
+          plan="Arcade"
           isMonthly={!toggled}
           selected={selectedPlan}
           handleSelect={setSelectedPlan}
         />
         <PlanCard
-          plan="advanced"
+          plan="Advanced"
           isMonthly={!toggled}
           selected={selectedPlan}
           handleSelect={setSelectedPlan}
         />
         <PlanCard
-          plan="pro"
+          plan="Pro"
           isMonthly={!toggled}
           selected={selectedPlan}
           handleSelect={setSelectedPlan}

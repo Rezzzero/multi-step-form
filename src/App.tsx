@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { PersonalInfoForm } from "./components/step/PersonalInfoForm";
+import { PersonalInfoForm } from "./components/step/personal-info/PersonalInfoForm";
 import { SelectPlan } from "./components/step/select-plan/SelectPlan";
+import { PickAddOns } from "./components/step/pick-add-ons/PickAddOns";
 
 function App() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -23,6 +24,7 @@ function App() {
       </div>
       {currentStep === 1 && <PersonalInfoForm />}
       {currentStep === 2 && <SelectPlan />}
+      {currentStep === 3 && <PickAddOns />}
       <div
         className={`flex bg-white w-full h-[72px] py-4 px-5 ${
           currentStep > 1 ? "justify-between" : "justify-end"
