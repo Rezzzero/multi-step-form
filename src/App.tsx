@@ -2,6 +2,7 @@ import { useState } from "react";
 import { PersonalInfoForm } from "./components/step/personal-info/PersonalInfoForm";
 import { SelectPlan } from "./components/step/select-plan/SelectPlan";
 import { PickAddOns } from "./components/step/pick-add-ons/PickAddOns";
+import { FinishingUp } from "./components/step/finishing-up/FinishingUp";
 
 function App() {
   const [data, setData] = useState({
@@ -58,6 +59,9 @@ function App() {
           handleAddOns={handlePickAddOns}
         />
       )}
+      {currentStep === 4 && (
+        <FinishingUp data={data} changeStep={setCurrentStep} />
+      )}
       <div
         className={`flex bg-white w-full h-[72px] py-4 px-5 ${
           currentStep > 1 ? "justify-between" : "justify-end"
@@ -70,6 +74,14 @@ function App() {
             className="text-gray-400"
           >
             Go Back
+          </button>
+        )}
+        {currentStep === 4 && (
+          <button
+            type="button"
+            className="bg-indigo-700 text-white font-semibold px-4 py-2 rounded-sm self-end"
+          >
+            Confirm
           </button>
         )}
         {currentStep < 4 && (

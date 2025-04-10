@@ -32,6 +32,8 @@ export const AddOnsCard = ({
       <div className="flex gap-2" onClick={() => handlePick(name)}>
         <input
           type="checkbox"
+          checked={selected}
+          onChange={() => handlePick(name)}
           id={`checkbox-${name}`}
           className="
             relative peer shrink-0
