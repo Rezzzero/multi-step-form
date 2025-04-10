@@ -32,7 +32,7 @@ export const AddOnsCard = ({
       <div className="flex gap-2" onClick={() => handlePick(name)}>
         <input
           type="checkbox"
-          id="some_id"
+          id={`checkbox-${name}`}
           className="
             relative peer shrink-0
             appearance-none w-5 h-5 border-2 border-blue-500 rounded-md bg-white

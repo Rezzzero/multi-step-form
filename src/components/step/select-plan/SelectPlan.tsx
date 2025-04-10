@@ -2,9 +2,16 @@ import { useState } from "react";
 import { PlanCard } from "../../card/PlanCard";
 import styles from "./SelectPlan.module.css";
 
-export const SelectPlan = () => {
+export const SelectPlan = ({
+  selectedPlan,
+  handleSelectPlan,
+  handleToggleMonthly,
+}: {
+  selectedPlan: string;
+  handleSelectPlan: (name: string) => void;
+  handleToggleMonthly: () => void;
+}) => {
   const [toggled, setToggled] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState("Arcade");
   return (
     <>
       <div className="flex flex-col gap-2 bg-white w-[90%] rounded-md py-7 px-5 shadow-md mb-auto">
@@ -16,19 +23,19 @@ export const SelectPlan = () => {
           plan="Arcade"
           isMonthly={!toggled}
           selected={selectedPlan}
-          handleSelect={setSelectedPlan}
+          handleSelect={handleSelectPlan}
         />
         <PlanCard
           plan="Advanced"
           isMonthly={!toggled}
           selected={selectedPlan}
-          handleSelect={setSelectedPlan}
+          handleSelect={handleSelectPlan}
         />
         <PlanCard
           plan="Pro"
           isMonthly={!toggled}
           selected={selectedPlan}
-          handleSelect={setSelectedPlan}
+          handleSelect={handleSelectPlan}
         />
         <div className="flex items-center justify-center mt-4 gap-4 font-semibold">
           <p
@@ -41,6 +48,7 @@ export const SelectPlan = () => {
           <button
             onClick={() => {
               setToggled(!toggled);
+              handleToggleMonthly();
             }}
             className={`${styles.toggleBtn} ${toggled ? styles.toggled : ""}`}
           >

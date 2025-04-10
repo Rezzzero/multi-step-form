@@ -12,7 +12,7 @@ const icons = {
 
 const costMonthly = {
   Arcade: 9,
-  Aadvanced: 12,
+  Advanced: 12,
   Pro: 15,
 } as {
   [key: string]: number;
