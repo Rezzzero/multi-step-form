@@ -1,10 +1,12 @@
 export const StepNavigation = ({
   currentStep,
-  setCurrentStep,
+  handlePrevStep,
+  handleNextStep,
   setConfirmed,
 }: {
   currentStep: number;
-  setCurrentStep: (step: number) => void;
+  handlePrevStep: () => void;
+  handleNextStep: () => void;
   setConfirmed: (confirmed: boolean) => void;
 }) => {
   return (
@@ -16,7 +18,7 @@ export const StepNavigation = ({
       {currentStep > 1 && (
         <button
           type="button"
-          onClick={() => setCurrentStep(currentStep - 1)}
+          onClick={() => handlePrevStep()}
           className="text-gray-400"
         >
           Go Back
@@ -34,7 +36,7 @@ export const StepNavigation = ({
       {currentStep < 4 && (
         <button
           type="button"
-          onClick={() => setCurrentStep(currentStep + 1)}
+          onClick={() => handleNextStep()}
           className="bg-[#06195c] text-white px-3 py-2 rounded-sm self-end"
         >
           Next Step

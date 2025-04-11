@@ -1,6 +1,7 @@
 import ProIcon from "../../assets/images/icon-pro.svg";
 import ArcadeIcon from "../../assets/images/icon-arcade.svg";
 import AdvancedIcon from "../../assets/images/icon-advanced.svg";
+import { PlanCardTypes } from "../../types/types";
 
 const icons = {
   Arcade: ArcadeIcon,
@@ -31,12 +32,7 @@ export const PlanCard = ({
   isMonthly,
   selected,
   handleSelect,
-}: {
-  plan: string;
-  isMonthly: boolean;
-  selected: string;
-  handleSelect: (plan: string) => void;
-}) => {
+}: PlanCardTypes) => {
   return (
     <div
       className={`flex gap-5 text-[#173973] border-1 items-start cursor-pointer ${

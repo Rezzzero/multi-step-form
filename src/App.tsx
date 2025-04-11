@@ -5,16 +5,41 @@ import { PickAddOns } from "./components/step/pick-add-ons/PickAddOns";
 import { FinishingUp } from "./components/step/finishing-up/FinishingUp";
 import { StepNavigation } from "./components/step-navigation/StepNavigation";
 import { Confirm } from "./components/step/confirm/Confirm";
+import { usePersonal } from "./hooks/usePersonal";
+import { validateFields } from "./utils/utils";
+import { PlanData } from "./types/types";
 
 function App() {
-  const [data, setData] = useState({
+  const {
+    pesronalData,
+    errors,
+    setErrors,
+    onChangeName,
+    onChangeEmail,
+    onChangePhone,
+  } = usePersonal();
+  const [data, setData] = useState<PlanData>({
     selectedPlanName: "",
     monthly: true,
-    addOns: [] as string[],
+    addOns: [],
   });
   const [currentStep, setCurrentStep] = useState(1);
   const steps = [1, 2, 3, 4];
   const [confirmed, setConfirmed] = useState(false);
+
+  const handleNextStep = () => {
+    if (currentStep === 1) {
+      const isValid = validateFields(pesronalData, setErrors);
+      if (isValid) setCurrentStep(currentStep + 1);
+    } else {
+      setCurrentStep(currentStep + 1);
+    }
+  };
+
+  const handlePrevStep = () => {
+    setCurrentStep(currentStep - 1);
+  };
+
   const handleToggleMonthly = () =>
     setData({ ...data, monthly: data.monthly ? false : true });
 
@@ -48,7 +73,15 @@ function App() {
           );
         })}
       </div>
-      {currentStep === 1 && <PersonalInfoForm />}
+      {currentStep === 1 && (
+        <PersonalInfoForm
+          pesronalData={pesronalData}
+          errors={errors}
+          onChangeName={onChangeName}
+          onChangeEmail={onChangeEmail}
+          onChangePhone={onChangePhone}
+        />
+      )}
       {currentStep === 2 && (
         <SelectPlan
           selectedPlan={data.selectedPlanName}
@@ -69,7 +102,8 @@ function App() {
       {!confirmed && (
         <StepNavigation
           currentStep={currentStep}
-          setCurrentStep={setCurrentStep}
+          handlePrevStep={handlePrevStep}
+          handleNextStep={handleNextStep}
           setConfirmed={setConfirmed}
         />
       )}

@@ -1,16 +1,13 @@
 import { useState } from "react";
 import { PlanCard } from "../../card/PlanCard";
 import styles from "./SelectPlan.module.css";
+import { SelectPlanTypes } from "../../../types/types";
 
 export const SelectPlan = ({
   selectedPlan,
   handleSelectPlan,
   handleToggleMonthly,
-}: {
-  selectedPlan: string;
-  handleSelectPlan: (name: string) => void;
-  handleToggleMonthly: () => void;
-}) => {
+}: SelectPlanTypes) => {
   const [toggled, setToggled] = useState(false);
   return (
     <>

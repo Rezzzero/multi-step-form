@@ -1,3 +1,5 @@
+import { PickAddOnsCardTypes } from "../../types/types";
+
 const description = {
   "Online service": "Access to multiplayer games",
   "Larger storage": "Extra 1TB of cloud save",
@@ -18,11 +20,7 @@ export const AddOnsCard = ({
   name,
   selected,
   handlePick,
-}: {
-  name: string;
-  selected: boolean;
-  handlePick: (name: string) => void;
-}) => {
+}: PickAddOnsCardTypes) => {
   return (
     <div
       className={`flex text-[#173973] px-3 py-2 border-1 ${

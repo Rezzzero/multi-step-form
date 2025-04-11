@@ -1,12 +1,10 @@
+import { PickAddOnsTypes } from "../../../types/types";
 import { AddOnsCard } from "../../card/AddOnsCard";
 
 export const PickAddOns = ({
   selectedAddOns,
   handleAddOns,
-}: {
-  selectedAddOns: string[];
-  handleAddOns: (name: string) => void;
-}) => {
+}: PickAddOnsTypes) => {
   return (
     <div className="flex flex-col gap-2 bg-white text-[#173973] w-[90%] rounded-md py-7 px-5 shadow-md mb-auto">
       <h1 className="font-bold text-2xl">Pick add-ons</h1>

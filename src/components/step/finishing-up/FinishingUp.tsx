@@ -1,3 +1,5 @@
+import { FinishingUpTypes } from "../../../types/types";
+
 const costMonthly = {
   Arcade: 9,
   Advanced: 12,
@@ -22,17 +24,7 @@ const addOnsCost = {
   [key: string]: number;
 };
 
-export const FinishingUp = ({
-  data,
-  changeStep,
-}: {
-  data: {
-    selectedPlanName: string;
-    monthly: boolean;
-    addOns: string[];
-  };
-  changeStep: (step: number) => void;
-}) => {
+export const FinishingUp = ({ data, changeStep }: FinishingUpTypes) => {
   const totalCost = (monthly: boolean) => {
     let total = 0;
     if (data.monthly) {
