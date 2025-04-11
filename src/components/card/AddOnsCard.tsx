@@ -25,7 +25,7 @@ export const AddOnsCard = ({
 }) => {
   return (
     <div
-      className={`flex px-3 py-2 border-1 ${
+      className={`flex text-[#173973] px-3 py-2 border-1 ${
         selected ? "border-[#06195c]" : "border-gray-300"
       } cursor-pointer items-center justify-between rounded-xl`}
     >
@@ -54,7 +54,7 @@ export const AddOnsCard = ({
         </svg>
       </div>
       <div>
-        <h1 className="font-bold text-[#06195c]">{name}</h1>
+        <h1 className="font-bold">{name}</h1>
         <p className="text-gray-400 text-sm">{description[name]}</p>
       </div>
       <p className=" text-sm text-blue-700">+${cost[name]}/yr</p>

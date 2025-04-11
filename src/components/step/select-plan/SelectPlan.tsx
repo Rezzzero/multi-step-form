@@ -14,8 +14,8 @@ export const SelectPlan = ({
   const [toggled, setToggled] = useState(false);
   return (
     <>
-      <div className="flex flex-col gap-2 bg-white w-[90%] rounded-md py-7 px-5 shadow-md mb-auto">
-        <h1 className="font-bold text-2xl text-[#06195c]">Select your plan</h1>
+      <div className="flex flex-col gap-2 text-[#173973] bg-white w-[90%] rounded-md py-7 px-5 shadow-md mb-auto">
+        <h1 className="font-bold text-2xl">Select your plan</h1>
         <p className="text-gray-400 max-w-[250px]">
           You have the option of monthly or yearly billing.
         </p>

@@ -3,6 +3,8 @@ import { PersonalInfoForm } from "./components/step/personal-info/PersonalInfoFo
 import { SelectPlan } from "./components/step/select-plan/SelectPlan";
 import { PickAddOns } from "./components/step/pick-add-ons/PickAddOns";
 import { FinishingUp } from "./components/step/finishing-up/FinishingUp";
+import { StepNavigation } from "./components/step-navigation/StepNavigation";
+import { Confirm } from "./components/step/confirm/Confirm";
 
 function App() {
   const [data, setData] = useState({
@@ -12,6 +14,7 @@ function App() {
   });
   const [currentStep, setCurrentStep] = useState(1);
   const steps = [1, 2, 3, 4];
+  const [confirmed, setConfirmed] = useState(false);
   const handleToggleMonthly = () =>
     setData({ ...data, monthly: data.monthly ? false : true });
 
@@ -59,41 +62,17 @@ function App() {
           handleAddOns={handlePickAddOns}
         />
       )}
-      {currentStep === 4 && (
+      {currentStep === 4 && !confirmed && (
         <FinishingUp data={data} changeStep={setCurrentStep} />
       )}
-      <div
-        className={`flex bg-white w-full h-[72px] py-4 px-5 ${
-          currentStep > 1 ? "justify-between" : "justify-end"
-        }`}
-      >
-        {currentStep > 1 && (
-          <button
-            type="button"
-            onClick={() => setCurrentStep(currentStep - 1)}
-            className="text-gray-400"
-          >
-            Go Back
-          </button>
-        )}
-        {currentStep === 4 && (
-          <button
-            type="button"
-            className="bg-indigo-700 text-white font-semibold px-4 py-2 rounded-sm self-end"
-          >
-            Confirm
-          </button>
-        )}
-        {currentStep < 4 && (
-          <button
-            type="button"
-            onClick={() => setCurrentStep(currentStep + 1)}
-            className="bg-[#06195c] text-white px-3 py-2 rounded-sm self-end"
-          >
-            Next Step
-          </button>
-        )}
-      </div>
+      {currentStep === 4 && confirmed && <Confirm />}
+      {!confirmed && (
+        <StepNavigation
+          currentStep={currentStep}
+          setCurrentStep={setCurrentStep}
+          setConfirmed={setConfirmed}
+        />
+      )}
     </div>
   );
 }

@@ -8,8 +8,8 @@ export const PickAddOns = ({
   handleAddOns: (name: string) => void;
 }) => {
   return (
-    <div className="flex flex-col gap-2 bg-white w-[90%] rounded-md py-7 px-5 shadow-md mb-auto">
-      <h1 className="font-bold text-2xl text-[#06195c]">Pick add-ons</h1>
+    <div className="flex flex-col gap-2 bg-white text-[#173973] w-[90%] rounded-md py-7 px-5 shadow-md mb-auto">
+      <h1 className="font-bold text-2xl">Pick add-ons</h1>
       <p className="text-gray-400 max-w-[250px]">
         Add-ons help enhance your gaming experience.
       </p>

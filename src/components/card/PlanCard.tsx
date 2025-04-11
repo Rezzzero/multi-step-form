@@ -39,14 +39,14 @@ export const PlanCard = ({
 }) => {
   return (
     <div
-      className={`flex gap-5 border-1 items-start cursor-pointer ${
+      className={`flex gap-5 text-[#173973] border-1 items-start cursor-pointer ${
         selected === plan ? "border-[#06195c]" : "border-gray-300"
       } rounded-xl px-4 py-3`}
       onClick={() => handleSelect(plan)}
     >
       <img src={icons[plan]} alt="icon" />
       <div>
-        <h1 className="font-bold text-[#06195c]">{plan}</h1>
+        <h1 className="font-bold">{plan}</h1>
         <p className="text-gray-400 text-sm">
           {isMonthly ? `$${costMonthly[plan]}/mo` : `$${costEarly[plan]}/yr`}
         </p>
