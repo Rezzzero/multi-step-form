@@ -1,4 +1,5 @@
 import { PickAddOnsCardTypes } from "../../types/types";
+import { addOnsCost } from "../../constants/costs";
 
 const description = {
   "Online service": "Access to multiplayer games",
@@ -6,14 +7,6 @@ const description = {
   "Customizable Profile": "Custom theme on your profile",
 } as {
   [key: string]: string;
-};
-
-const cost = {
-  "Online service": 10,
-  "Larger storage": 20,
-  "Customizable Profile": 20,
-} as {
-  [key: string]: number;
 };
 
 export const AddOnsCard = ({
@@ -57,7 +50,8 @@ export const AddOnsCard = ({
         <p className="text-gray-400 text-sm">{description[name]}</p>
       </div>
       <p className="ml-auto text-sm text-blue-700">
-        +${isMonthly ? cost[name] / 10 : cost[name]}/{isMonthly ? "mo" : "yr"}
+        +${isMonthly ? addOnsCost[name] / 10 : addOnsCost[name]}/
+        {isMonthly ? "mo" : "yr"}
       </p>
     </div>
   );

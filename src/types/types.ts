@@ -55,3 +55,10 @@ export interface FinishingUpTypes {
   data: PlanData;
   changeStep: (step: number) => void;
 }
+
+export interface StepNavigationTypes {
+  currentStep: number;
+  handlePrevStep: () => void;
+  handleNextStep: () => void;
+  setConfirmed: (confirmed: boolean) => void;
+}

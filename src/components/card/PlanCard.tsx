@@ -2,6 +2,7 @@ import ProIcon from "../../assets/images/icon-pro.svg";
 import ArcadeIcon from "../../assets/images/icon-arcade.svg";
 import AdvancedIcon from "../../assets/images/icon-advanced.svg";
 import { PlanCardTypes } from "../../types/types";
+import { costMonthly, costEarly } from "../../constants/costs";
 
 const icons = {
   Arcade: ArcadeIcon,
@@ -9,22 +10,6 @@ const icons = {
   Pro: ProIcon,
 } as {
   [key: string]: string;
-};
-
-const costMonthly = {
-  Arcade: 9,
-  Advanced: 12,
-  Pro: 15,
-} as {
-  [key: string]: number;
-};
-
-const costEarly = {
-  Arcade: 90,
-  Advanced: 120,
-  Pro: 150,
-} as {
-  [key: string]: number;
 };
 
 export const PlanCard = ({

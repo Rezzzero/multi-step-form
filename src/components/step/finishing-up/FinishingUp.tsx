@@ -1,28 +1,5 @@
 import { FinishingUpTypes } from "../../../types/types";
-
-const costMonthly = {
-  Arcade: 9,
-  Advanced: 12,
-  Pro: 15,
-} as {
-  [key: string]: number;
-};
-
-const costEarly = {
-  Arcade: 90,
-  Advanced: 120,
-  Pro: 150,
-} as {
-  [key: string]: number;
-};
-
-const addOnsCost = {
-  "Online service": 10,
-  "Larger storage": 20,
-  "Customizable Profile": 20,
-} as {
-  [key: string]: number;
-};
+import { costMonthly, costEarly, addOnsCost } from "../../../constants/costs";
 
 export const FinishingUp = ({ data, changeStep }: FinishingUpTypes) => {
   const totalCost = (monthly: boolean) => {

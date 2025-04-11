@@ -1,14 +1,11 @@
+import { StepNavigationTypes } from "../../types/types";
+
 export const StepNavigation = ({
   currentStep,
   handlePrevStep,
   handleNextStep,
   setConfirmed,
-}: {
-  currentStep: number;
-  handlePrevStep: () => void;
-  handleNextStep: () => void;
-  setConfirmed: (confirmed: boolean) => void;
-}) => {
+}: StepNavigationTypes) => {
   return (
     <div
       className={`flex bg-white w-full h-[72px] py-4 px-5 ${
