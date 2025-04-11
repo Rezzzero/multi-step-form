@@ -5,6 +5,7 @@ import { SelectPlanTypes } from "../../../types/types";
 
 export const SelectPlan = ({
   selectedPlan,
+  selectPlanError,
   handleSelectPlan,
   handleToggleMonthly,
 }: SelectPlanTypes) => {
@@ -59,6 +60,9 @@ export const SelectPlan = ({
             Yearly
           </p>
         </div>
+        {selectPlanError && (
+          <p className="text-red-600 text-center">You must select a plan!</p>
+        )}
       </div>
     </>
   );

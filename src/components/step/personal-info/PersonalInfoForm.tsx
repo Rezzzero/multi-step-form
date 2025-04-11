@@ -27,7 +27,9 @@ export const PersonalInfoForm = ({
           onChange={onChangeName}
           id="name"
           placeholder="e.g. Stephen King"
-          className="border-1 border-gray-300 rounded-md p-2 placeholder-gray-400 mb-2"
+          className={`border-1 ${
+            errors.name.error ? "border-red-700" : "border-gray-300"
+          } rounded-md p-2 placeholder-gray-400 mb-2`}
         />
         <label htmlFor="email" className="text-sm">
           Email Address
@@ -42,7 +44,9 @@ export const PersonalInfoForm = ({
           onChange={onChangeEmail}
           id="email"
           placeholder="e.g. stephenking@lorem.com"
-          className="border-1 border-gray-300 rounded-md p-2 placeholder-gray-400 mb-2"
+          className={`border-1 ${
+            errors.email.error ? "border-red-700" : "border-gray-300"
+          } rounded-md p-2 placeholder-gray-400 mb-2`}
         />
         <label htmlFor="phone" className="text-sm">
           Phone Number
@@ -57,7 +61,9 @@ export const PersonalInfoForm = ({
           onChange={onChangePhone}
           id="phone"
           placeholder="e.g. +1 234 567 890"
-          className="border-1 border-gray-300 rounded-md p-2 placeholder-gray-400"
+          className={`border-1 ${
+            errors.phone.error ? "border-red-700" : "border-gray-300"
+          } rounded-md p-2 placeholder-gray-400`}
         />
       </form>
     </div>

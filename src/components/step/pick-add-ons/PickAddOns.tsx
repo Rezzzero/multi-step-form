@@ -4,6 +4,7 @@ import { AddOnsCard } from "../../card/AddOnsCard";
 export const PickAddOns = ({
   selectedAddOns,
   handleAddOns,
+  isMonthly,
 }: PickAddOnsTypes) => {
   return (
     <div className="flex flex-col gap-2 bg-white text-[#173973] w-[90%] rounded-md py-7 px-5 shadow-md mb-auto">
@@ -15,16 +16,19 @@ export const PickAddOns = ({
         name="Online service"
         selected={selectedAddOns.includes("Online service")}
         handlePick={handleAddOns}
+        isMonthly={isMonthly}
       />
       <AddOnsCard
         name="Larger storage"
         selected={selectedAddOns.includes("Larger storage")}
         handlePick={handleAddOns}
+        isMonthly={isMonthly}
       />
       <AddOnsCard
         name="Customizable Profile"
         selected={selectedAddOns.includes("Customizable Profile")}
         handlePick={handleAddOns}
+        isMonthly={isMonthly}
       />
     </div>
   );

@@ -23,7 +23,8 @@ function App() {
     monthly: true,
     addOns: [],
   });
-  const [currentStep, setCurrentStep] = useState(1);
+  const [selectPlanError, setSelectPlanError] = useState(false);
+  const [currentStep, setCurrentStep] = useState(2);
   const steps = [1, 2, 3, 4];
   const [confirmed, setConfirmed] = useState(false);
 
@@ -31,6 +32,14 @@ function App() {
     if (currentStep === 1) {
       const isValid = validateFields(pesronalData, setErrors);
       if (isValid) setCurrentStep(currentStep + 1);
+    }
+    if (currentStep === 2) {
+      if (data.selectedPlanName === "") {
+        setSelectPlanError(true);
+      } else {
+        setSelectPlanError(false);
+        setCurrentStep(currentStep + 1);
+      }
     } else {
       setCurrentStep(currentStep + 1);
     }
@@ -43,8 +52,10 @@ function App() {
   const handleToggleMonthly = () =>
     setData({ ...data, monthly: data.monthly ? false : true });
 
-  const handleSelectPlan = (name: string) =>
+  const handleSelectPlan = (name: string) => {
     setData({ ...data, selectedPlanName: name });
+    setSelectPlanError(false);
+  };
 
   const handlePickAddOns = (name: string) => {
     if (data.addOns.includes(name)) {
@@ -85,6 +96,7 @@ function App() {
       {currentStep === 2 && (
         <SelectPlan
           selectedPlan={data.selectedPlanName}
+          selectPlanError={selectPlanError}
           handleSelectPlan={handleSelectPlan}
           handleToggleMonthly={handleToggleMonthly}
         />
@@ -93,6 +105,7 @@ function App() {
         <PickAddOns
           selectedAddOns={data.addOns}
           handleAddOns={handlePickAddOns}
+          isMonthly={data.monthly}
         />
       )}
       {currentStep === 4 && !confirmed && (

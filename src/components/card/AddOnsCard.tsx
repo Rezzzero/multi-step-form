@@ -20,14 +20,15 @@ export const AddOnsCard = ({
   name,
   selected,
   handlePick,
+  isMonthly,
 }: PickAddOnsCardTypes) => {
   return (
     <div
       className={`flex text-[#173973] px-3 py-2 border-1 ${
         selected ? "border-[#06195c]" : "border-gray-300"
-      } cursor-pointer items-center justify-between rounded-xl`}
+      } cursor-pointer items-center rounded-xl`}
     >
-      <div className="flex gap-2" onClick={() => handlePick(name)}>
+      <div className="flex gap-2 mr-3" onClick={() => handlePick(name)}>
         <input
           type="checkbox"
           checked={selected}
@@ -55,7 +56,9 @@ export const AddOnsCard = ({
         <h1 className="font-bold">{name}</h1>
         <p className="text-gray-400 text-sm">{description[name]}</p>
       </div>
-      <p className=" text-sm text-blue-700">+${cost[name]}/yr</p>
+      <p className="ml-auto text-sm text-blue-700">
+        +${isMonthly ? cost[name] / 10 : cost[name]}/{isMonthly ? "mo" : "yr"}
+      </p>
     </div>
   );
 };

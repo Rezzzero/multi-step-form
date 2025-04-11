@@ -26,6 +26,7 @@ export interface PersonalInfoFormTypes {
 
 export interface SelectPlanTypes {
   selectedPlan: string;
+  selectPlanError: boolean;
   handleSelectPlan: (name: string) => void;
   handleToggleMonthly: () => void;
 }
@@ -40,12 +41,14 @@ export interface PlanCardTypes {
 export interface PickAddOnsTypes {
   selectedAddOns: string[];
   handleAddOns: (name: string) => void;
+  isMonthly: boolean;
 }
 
 export interface PickAddOnsCardTypes {
   name: string;
   selected: boolean;
   handlePick: (name: string) => void;
+  isMonthly: boolean;
 }
 
 export interface FinishingUpTypes {
