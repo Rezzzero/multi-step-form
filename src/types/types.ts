@@ -62,3 +62,20 @@ export interface StepNavigationTypes {
   handleNextStep: () => void;
   setConfirmed: (confirmed: boolean) => void;
 }
+
+export interface CustomLabelTypes {
+  labelName: string;
+  htmlFor: string;
+  error: boolean;
+  errorMessage: string;
+}
+
+export interface CustomInputTypes {
+  type: string;
+  name: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  id: string;
+  placeholder: string;
+  error: boolean;
+}

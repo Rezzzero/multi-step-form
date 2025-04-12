@@ -1,4 +1,6 @@
 import { PersonalInfoFormTypes } from "../../../types/types";
+import { CustomInput } from "../../input/CustomInput";
+import { CustomLabel } from "../../label/CustomLabel";
 import { StepTemplate } from "../../step-template/StepTemplate";
 
 export const PersonalInfoForm = ({
@@ -14,65 +16,50 @@ export const PersonalInfoForm = ({
         Please provide your name, email address, and phone number.
       </p>
       <form className="flex flex-col font-semibold">
-        <label
+        <CustomLabel
+          labelName="Name"
           htmlFor="name"
-          className="text-sm lg:flex lg:justify-between lg:font-bold lg:mb-1"
-        >
-          Name
-          {errors.name.error && (
-            <p className="text-red-600">{errors.name.message}</p>
-          )}
-        </label>
-        <input
+          error={errors.name.error}
+          errorMessage={errors.name.message}
+        />
+        <CustomInput
           type="text"
           name="name"
           value={pesronalData.name}
           onChange={onChangeName}
           id="name"
           placeholder="e.g. Stephen King"
-          className={`border-1 ${
-            errors.name.error ? "border-red-700" : "border-gray-300"
-          } rounded-md p-2 placeholder-gray-400 mb-2 focus:outline-none focus:ring-2 focus:ring-indigo-600 lg:h-12 lg:p-4 lg:mb-5`}
+          error={errors.name.error}
         />
-        <label
+        <CustomLabel
+          labelName="Email Address"
           htmlFor="email"
-          className="text-sm lg:flex lg:justify-between lg:font-bold lg:mb-1"
-        >
-          Email Address
-          {errors.email.error && (
-            <p className="text-red-600">{errors.email.message}</p>
-          )}
-        </label>
-        <input
+          error={errors.email.error}
+          errorMessage={errors.email.message}
+        />
+        <CustomInput
           type="email"
           name="email"
           value={pesronalData.email}
           onChange={onChangeEmail}
           id="email"
           placeholder="e.g. stephenking@lorem.com"
-          className={`border-1 ${
-            errors.email.error ? "border-red-700" : "border-gray-300"
-          } rounded-md p-2 placeholder-gray-400 mb-2 focus:outline-none focus:ring-2 focus:ring-indigo-600 lg:h-12 lg:p-4 lg:mb-5`}
+          error={errors.email.error}
         />
-        <label
+        <CustomLabel
+          labelName="Phone Number"
           htmlFor="phone"
-          className="text-sm lg:flex lg:justify-between lg:font-bold lg:mb-1"
-        >
-          Phone Number
-          {errors.phone.error && (
-            <p className="text-red-600">{errors.phone.message}</p>
-          )}
-        </label>
-        <input
+          error={errors.phone.error}
+          errorMessage={errors.phone.message}
+        />
+        <CustomInput
           type="text"
           name="phone"
           value={pesronalData.phone}
           onChange={onChangePhone}
           id="phone"
           placeholder="e.g. +1 234 567 890"
-          className={`border-1 ${
-            errors.phone.error ? "border-red-700" : "border-gray-300"
-          } rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-600 lg:h-12 lg:p-4 placeholder-gray-400`}
+          error={errors.phone.error}
         />
       </form>
     </StepTemplate>
