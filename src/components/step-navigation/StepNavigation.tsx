@@ -8,7 +8,7 @@ export const StepNavigation = ({
 }: StepNavigationTypes) => {
   return (
     <div
-      className={`flex bg-white w-full h-[72px] py-4 px-5 ${
+      className={`flex bg-white w-full h-[72px] lg:w-[566px] lg:absolute lg:bottom-10 lg:right-15 py-4 px-5 ${
         currentStep > 1 ? "justify-between" : "justify-end"
       }`}
     >
