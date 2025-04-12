@@ -1,5 +1,6 @@
 import { PickAddOnsTypes } from "../../../types/types";
 import { AddOnsCard } from "../../card/AddOnsCard";
+import { StepTemplate } from "../../step-template/StepTemplate";
 
 export const PickAddOns = ({
   selectedAddOns,
@@ -7,8 +8,7 @@ export const PickAddOns = ({
   isMonthly,
 }: PickAddOnsTypes) => {
   return (
-    <div className="flex flex-col gap-2 bg-white text-[#173973] w-[90%] rounded-md py-7 px-5 shadow-md mb-auto lg:shadow-none lg:pt-10">
-      <h1 className="font-bold text-2xl lg:text-4xl">Pick add-ons</h1>
+    <StepTemplate title="Pick add-ons">
       <p className="text-gray-400 max-w-[250px] lg:max-w-full lg:mb-6">
         Add-ons help enhance your gaming experience.
       </p>
@@ -32,6 +32,6 @@ export const PickAddOns = ({
           isMonthly={isMonthly}
         />
       </div>
-    </div>
+    </StepTemplate>
   );
 };

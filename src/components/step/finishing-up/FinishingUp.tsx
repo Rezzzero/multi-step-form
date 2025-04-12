@@ -1,5 +1,6 @@
 import { FinishingUpTypes } from "../../../types/types";
 import { costMonthly, costEarly, addOnsCost } from "../../../constants/costs";
+import { StepTemplate } from "../../step-template/StepTemplate";
 
 export const FinishingUp = ({ data, changeStep }: FinishingUpTypes) => {
   const totalCost = (monthly: boolean) => {
@@ -16,8 +17,7 @@ export const FinishingUp = ({ data, changeStep }: FinishingUpTypes) => {
   };
 
   return (
-    <div className="flex flex-col text-[#173973] gap-2 bg-white w-[90%] rounded-md py-7 px-5 shadow-md mb-auto lg:shadow-none lg:pt-10">
-      <h1 className="font-bold text-2xl lg:text-4xl">Finishing up</h1>
+    <StepTemplate title="Finishing up">
       <p className="text-gray-400 max-w-[250px] lg:max-w-full lg:mb-10">
         Double-check everything looks OK before confirming.
       </p>
@@ -67,6 +67,6 @@ export const FinishingUp = ({ data, changeStep }: FinishingUpTypes) => {
           ${totalCost(data.monthly)}/{data.monthly ? "mo" : "yr"}
         </p>
       </div>
-    </div>
+    </StepTemplate>
   );
 };

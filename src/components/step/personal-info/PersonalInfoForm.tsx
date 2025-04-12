@@ -1,4 +1,5 @@
 import { PersonalInfoFormTypes } from "../../../types/types";
+import { StepTemplate } from "../../step-template/StepTemplate";
 
 export const PersonalInfoForm = ({
   pesronalData,
@@ -8,8 +9,7 @@ export const PersonalInfoForm = ({
   onChangePhone,
 }: PersonalInfoFormTypes) => {
   return (
-    <div className="flex flex-col gap-4 text-[#173973] bg-white w-[90%] rounded-md py-7 px-5 shadow-md mb-auto lg:gap-2 lg:pt-10 lg:shadow-none">
-      <h1 className="font-bold text-2xl lg:text-4xl">Personal Info</h1>
+    <StepTemplate title="Personal Info">
       <p className="text-gray-400 max-w-[250px] lg:max-w-full lg:mb-4">
         Please provide your name, email address, and phone number.
       </p>
@@ -75,6 +75,6 @@ export const PersonalInfoForm = ({
           } rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-600 lg:h-12 lg:p-4 placeholder-gray-400`}
         />
       </form>
-    </div>
+    </StepTemplate>
   );
 };
