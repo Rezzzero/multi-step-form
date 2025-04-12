@@ -50,7 +50,7 @@ function App() {
         setSelectPlanError(false);
         setCurrentStep(currentStep + 1);
       }
-    } else {
+    } else if (currentStep === 3 || currentStep === 4) {
       setCurrentStep(currentStep + 1);
     }
   };
@@ -80,9 +80,9 @@ function App() {
 
   return (
     <div className="h-screen flex items-center justify-center">
-      <div className="container flex flex-col lg:relative lg:flex-row lg:gap-20 lg:pl-5 lg:pr-15 lg:bg-white h-screen lg:max-h-[610px] lg:max-w-[1000px] pt-8 lg:pt-5 lg:pb-5 lg:rounded-xl items-center lg:items-start">
+      <div className="container flex flex-col lg:relative lg:flex-row lg:gap-15 lg:pl-5 lg:pr-24 lg:bg-white h-screen lg:max-h-[610px] lg:max-w-[930px] pt-8 lg:pt-5 lg:pb-5 lg:rounded-xl items-center lg:items-start">
         <div
-          className={`flex lg:flex-col lg:h-full lg:w-[370px] lg:bg-[url(../src/assets/images/bg-sidebar-desktop.svg)] lg:bg-no-repeat lg:p-10  gap-6 text-white mb-8`}
+          className={`flex lg:flex-col lg:h-full lg:w-[390px] lg:bg-[url(../src/assets/images/bg-sidebar-desktop.svg)] lg:bg-no-repeat lg:p-10 gap-6 text-white mb-8`}
         >
           {steps.map((step) => {
             return (
@@ -96,7 +96,7 @@ function App() {
                 </div>
                 <div className="hidden lg:block flex flex-col">
                   <h3 className="text-gray-400 text-xs">STEP {step}</h3>
-                  <p className="font-bold text-sm tracking-widest">
+                  <p className="font-semibold text-sm tracking-widest">
                     {stepsDesc[step]}
                   </p>
                 </div>

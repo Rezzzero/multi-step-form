@@ -8,7 +8,7 @@ export const StepNavigation = ({
 }: StepNavigationTypes) => {
   return (
     <div
-      className={`flex bg-white w-full h-[72px] lg:w-[566px] lg:absolute lg:bottom-10 lg:right-15 py-4 px-5 ${
+      className={`flex bg-white w-full h-[72px] lg:w-[490px] lg:absolute lg:bottom-5 lg:right-24 py-4 px-5 ${
         currentStep > 1 ? "justify-between" : "justify-end"
       }`}
     >
@@ -34,7 +34,7 @@ export const StepNavigation = ({
         <button
           type="button"
           onClick={() => handleNextStep()}
-          className="bg-[#06195c] text-white px-3 py-2 rounded-sm self-end"
+          className="bg-[#06195c] hover:bg-[#384c94] text-white px-3 py-2 rounded-sm self-end lg:px-5 lg:py-[10px] lg:rounded-md"
         >
           Next Step
         </button>
