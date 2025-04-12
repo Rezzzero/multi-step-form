@@ -8,7 +8,6 @@ import { Confirm } from "./components/step/confirm/Confirm";
 import { usePersonal } from "./hooks/usePersonal";
 import { validateFields } from "./utils/utils";
 import { PlanData } from "./types/types";
-import backgroundImg from "../src/assets/images/bg-sidebar-desktop.svg";
 
 const stepsDesc = {
   1: "YOUR INFO",
@@ -80,9 +79,9 @@ function App() {
 
   return (
     <div className="h-screen flex items-center justify-center">
-      <div className="container flex flex-col lg:relative lg:flex-row lg:gap-15 lg:pl-5 lg:pr-24 lg:bg-white h-screen lg:max-h-[610px] lg:max-w-[930px] pt-8 lg:pt-5 lg:pb-5 lg:rounded-xl items-center lg:items-start">
+      <div className="container flex flex-col h-screen pt-8 items-center lg:relative lg:flex-row lg:gap-15 lg:pl-5 lg:pr-24 lg:bg-white lg:max-h-[610px] lg:max-w-[930px] lg:pt-5 lg:pb-5 lg:rounded-xl lg:items-start">
         <div
-          className={`flex lg:flex-col lg:h-full lg:w-[390px] lg:bg-[url(../src/assets/images/bg-sidebar-desktop.svg)] lg:bg-no-repeat lg:p-10 gap-6 text-white mb-8`}
+          className={`flex gap-6 text-white mb-8 lg:flex-col lg:h-full lg:w-[390px] lg:bg-[url(../src/assets/images/bg-sidebar-desktop.svg)] lg:bg-no-repeat lg:p-10`}
         >
           {steps.map((step) => {
             return (

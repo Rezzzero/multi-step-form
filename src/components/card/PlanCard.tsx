@@ -22,7 +22,7 @@ export const PlanCard = ({
     <div
       className={`flex gap-5 text-[#173973] border-1 items-start cursor-pointer ${
         selected === plan ? "border-[#06195c]" : "border-gray-300"
-      } rounded-xl px-4 py-3`}
+      } rounded-xl hover:border-indigo-600 px-4 py-3 lg:flex-col lg:gap-9 lg:w-[135px]`}
       onClick={() => handleSelect(plan)}
     >
       <img src={icons[plan]} alt="icon" />

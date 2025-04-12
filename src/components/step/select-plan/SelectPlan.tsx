@@ -12,30 +12,32 @@ export const SelectPlan = ({
   const [toggled, setToggled] = useState(false);
   return (
     <>
-      <div className="flex flex-col gap-2 text-[#173973] bg-white w-[90%] rounded-md py-7 px-5 shadow-md mb-auto">
-        <h1 className="font-bold text-2xl">Select your plan</h1>
-        <p className="text-gray-400 max-w-[250px]">
+      <div className="flex flex-col gap-2 text-[#173973] bg-white w-[90%] rounded-md py-7 px-5 shadow-md mb-auto lg:pt-10 lg:shadow-none">
+        <h1 className="font-bold text-2xl lg:text-4xl">Select your plan</h1>
+        <p className="text-gray-400 max-w-[250px] lg:max-w-full lg:mb-6">
           You have the option of monthly or yearly billing.
         </p>
-        <PlanCard
-          plan="Arcade"
-          isMonthly={!toggled}
-          selected={selectedPlan}
-          handleSelect={handleSelectPlan}
-        />
-        <PlanCard
-          plan="Advanced"
-          isMonthly={!toggled}
-          selected={selectedPlan}
-          handleSelect={handleSelectPlan}
-        />
-        <PlanCard
-          plan="Pro"
-          isMonthly={!toggled}
-          selected={selectedPlan}
-          handleSelect={handleSelectPlan}
-        />
-        <div className="flex items-center justify-center mt-4 gap-4 font-semibold">
+        <div className="flex flex-col gap-2 mb-4 lg:flex-row lg:gap-4 lg:mb-8">
+          <PlanCard
+            plan="Arcade"
+            isMonthly={!toggled}
+            selected={selectedPlan}
+            handleSelect={handleSelectPlan}
+          />
+          <PlanCard
+            plan="Advanced"
+            isMonthly={!toggled}
+            selected={selectedPlan}
+            handleSelect={handleSelectPlan}
+          />
+          <PlanCard
+            plan="Pro"
+            isMonthly={!toggled}
+            selected={selectedPlan}
+            handleSelect={handleSelectPlan}
+          />
+        </div>
+        <div className="flex items-center justify-center gap-4 font-semibold lg:font-bold">
           <p
             className={`${
               !toggled ? "text-[#06195c]" : "text-gray-400"

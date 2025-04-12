@@ -16,14 +16,14 @@ export const FinishingUp = ({ data, changeStep }: FinishingUpTypes) => {
   };
 
   return (
-    <div className="flex flex-col text-[#173973] gap-2 bg-white w-[90%] rounded-md py-7 px-5 shadow-md mb-auto">
-      <h1 className="font-bold text-2xl">Finishing up</h1>
-      <p className="text-gray-400 max-w-[250px]">
+    <div className="flex flex-col text-[#173973] gap-2 bg-white w-[90%] rounded-md py-7 px-5 shadow-md mb-auto lg:shadow-none lg:pt-10">
+      <h1 className="font-bold text-2xl lg:text-4xl">Finishing up</h1>
+      <p className="text-gray-400 max-w-[250px] lg:max-w-full lg:mb-10">
         Double-check everything looks OK before confirming.
       </p>
-      <div className="flex justify-between">
+      <div className="flex justify-between lg:px-6">
         <div className="flex flex-col items-start">
-          <h1 className="font-semibold">
+          <h1 className="font-semibold lg:font-bold">
             {data.selectedPlanName} {data.monthly ? "(Monthly)" : "(Yearly)"}
           </h1>
           <button
@@ -43,7 +43,7 @@ export const FinishingUp = ({ data, changeStep }: FinishingUpTypes) => {
         </p>
       </div>
       {data.addOns.length > 0 && (
-        <div className="flex flex-col gap-2 mt-4">
+        <div className="flex flex-col gap-2 mt-4 lg:mb-6 lg:px-6">
           {data.addOns.map((addOn) => {
             return (
               <div className="flex justify-between" key={addOn}>
@@ -59,7 +59,7 @@ export const FinishingUp = ({ data, changeStep }: FinishingUpTypes) => {
           })}
         </div>
       )}
-      <div className="flex justify-between">
+      <div className="flex justify-between lg:px-6">
         <h1 className="text-gray-400">
           Total {data.monthly ? "(per month)" : "(per year)"}
         </h1>
